@@ -625,6 +625,28 @@ body {
     z-index: 2;
   }
 
+  .benefits .container .benefits_top .top_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefits .container .benefits_top .top_left .benefit_left {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .benefits .container .benefits_bottom .intro {
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .benefits .container .benefits_bottom .intro .line {
+    width: min(100%, 420px);
+  }
+
   .benefits .container .benefits_top .top_right {
     position: static !important;
     order: -1;
