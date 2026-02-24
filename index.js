@@ -386,4 +386,93 @@ movingslide[5].addEventListener('mouseover', (event) => {
     move.style.marginLeft = -1000 + 'px'
 })
 
+const translations = {
+    en: {
+        htmlLang: 'en',
+        pageTitle: 'COVILLA Travel',
+        destinationBtn: 'DESTINATIONS',
+        chooseLocation: 'CHOOSE A LOCATION',
+        navAbout: 'ABOUT',
+        navJournal: 'JOURNAL',
+        navSupport: 'SUPPORT',
+        heroLabel: 'FAMILY TRAVEL AGENCY',
+        heroTitle: "Let's plan your next vacation",
+        heroAction: 'contact us',
+        popularLocation: 'POPULAR LOCATION',
+        destinationsLabel: 'COVILLA DESTINATIONS',
+        destinationsTitle: 'Across the world',
+        benefitsLabel: 'COVILLA BENEFITS',
+        benefitsTitle: 'Take your family on the best vacation',
+        chooseDestination: 'CHOOSE A DESTINATION'
+    },
+    zh: {
+        htmlLang: 'zh-Hans',
+        pageTitle: 'COVILLA 旅行',
+        destinationBtn: '目的地',
+        chooseLocation: '选择地点',
+        navAbout: '关于我们',
+        navJournal: '旅行日志',
+        navSupport: '支持',
+        heroLabel: '家庭旅行社',
+        heroTitle: '一起规划你的下一次假期',
+        heroAction: '联系我们',
+        popularLocation: '热门地点',
+        destinationsLabel: 'COVILLA 目的地',
+        destinationsTitle: '环游世界',
+        benefitsLabel: 'COVILLA 优势',
+        benefitsTitle: '带家人开启最棒的假期',
+        chooseDestination: '选择目的地'
+    }
+}
+
+const setText = (selector, value) => {
+    const node = document.querySelector(selector)
+    if (node && value) node.textContent = value
+}
+
+const setButtonWithIcon = (selector, value) => {
+    const node = document.querySelector(selector)
+    if (!node || !value) return
+    node.textContent = value
+    const icon = document.createElement('img')
+    icon.src = './keyboard_arrow_down_FILL0_wght400_GRAD0_opsz24.svg'
+    icon.width = 14
+    icon.height = 14
+    node.appendChild(icon)
+}
+
+const applyLanguage = (lang) => {
+    const selected = translations[lang] ? lang : 'en'
+    const copy = translations[selected]
+
+    document.documentElement.lang = copy.htmlLang
+    document.title = copy.pageTitle
+    localStorage.setItem('lang', selected)
+
+    setButtonWithIcon('header .destination .button', copy.destinationBtn)
+    setText('header .destination .down_menu .subtitle h3', copy.chooseLocation)
+    setText('ul.header_mask li:nth-child(1) a', copy.navAbout)
+    setText('ul.header_mask li:nth-child(2) a', copy.navJournal)
+    setText('ul.header_mask li:nth-child(3) a', copy.navSupport)
+    setText('.main .main_left h3', copy.heroLabel)
+    setText('.main .main_left h1', copy.heroTitle)
+    setText('.main .main_left .mainleft_button a', copy.heroAction)
+    setText('.main .location h3', copy.popularLocation)
+    setText('.wrapper .container > h3', copy.destinationsLabel)
+    setText('.wrapper .container > h1', copy.destinationsTitle)
+    setText('.benefits .benefit_left h3', copy.benefitsLabel)
+    setText('.benefits .benefit_left h1', copy.benefitsTitle)
+    setButtonWithIcon('.benefits .drop_down .down_button', copy.chooseDestination)
+
+    document.querySelectorAll('.lang-btn').forEach((button) => {
+        button.classList.toggle('active', button.dataset.lang === selected)
+    })
+}
+
+document.querySelectorAll('.lang-btn').forEach((button) => {
+    button.addEventListener('click', () => applyLanguage(button.dataset.lang))
+})
+
+applyLanguage(localStorage.getItem('lang') || 'en')
+
 
