@@ -35,6 +35,10 @@ body {
     width: min(92vw, 500px);
   }
 
+  .benefits {
+    padding: 0 !important;
+  }
+
   .scroll {
     display: none;
   }
@@ -98,7 +102,21 @@ body {
 
 @media (max-width: 768px) {
   header .container {
-    padding-left: 70px;
+    padding-left: 60px;
+  }
+
+  header .container .menu {
+    width: 64px;
+    height: 64px;
+  }
+
+  header .container .menu .two_bar {
+    width: 20px;
+    margin-bottom: 8px;
+  }
+
+  .align_left {
+    padding-top: 76px;
   }
 
   header .container .logo {
