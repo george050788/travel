@@ -35,9 +35,33 @@ body {
     width: min(92vw, 500px);
   }
 
-  .scroll,
-  .align_left {
+  .scroll {
     display: none;
+  }
+
+  .align_left {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 92px;
+    transform: translateY(-110%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 450ms ease, opacity 250ms ease;
+  }
+
+  .align_left.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .align_left .scrollbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: calc(100vh - 120px);
   }
 
   .main .container,
@@ -367,6 +391,18 @@ body {
   .feedback .container .contents .button {
     position: static !important;
     margin-top: 8px;
+  }
+
+  .benefits .container .benefits_top .top_left .benefit_left,
+  .benefits .container .benefits_bottom .intro {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefits .container .benefits_top .top_left .drop_down {
+    display: flex;
+    justify-content: center;
   }
 
   .feedback .background-cover .background {
