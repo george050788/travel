@@ -389,6 +389,7 @@ movingslide[5].addEventListener('mouseover', (event) => {
 const translations = {
     en: {
         htmlLang: 'en',
+        logoHtml: '<span>Je</span>nnis <span>Ch</span>ang <span>Ho</span>me <span>Fin</span>ance',
         pageTitle: 'Jennis Chang home finance',
         destinationBtn: 'LOAN PROGRAMS',
         chooseLocation: 'CHOOSE A LOAN TYPE',
@@ -407,6 +408,7 @@ const translations = {
     },
     zh: {
         htmlLang: 'zh-Hans',
+        logoHtml: 'Jennis 珍珍貸款服務',
         pageTitle: 'JENNIS 珍珍貸款服務',
         destinationBtn: '貸款方案',
         chooseLocation: '選擇類型',
@@ -428,6 +430,11 @@ const translations = {
 const setText = (selector, value) => {
     const node = document.querySelector(selector)
     if (node && value) node.textContent = value
+}
+
+const setHtml = (selector, value) => {
+    const node = document.querySelector(selector)
+    if (node && value) node.innerHTML = value
 }
 
 const setHref = (selector, value) => {
@@ -454,6 +461,7 @@ const applyLanguage = (lang) => {
     document.title = copy.pageTitle
     localStorage.setItem('lang', selected)
 
+    setHtml('header .logo a.brand-logo', copy.logoHtml)
     setButtonWithIcon('header .destination .button', copy.destinationBtn)
     setText('header .destination .down_menu .subtitle h3', copy.chooseLocation)
     setText('ul.header_mask li:nth-child(1) a', copy.navAbout)
