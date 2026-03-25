@@ -459,7 +459,7 @@ const applyLanguage = (lang) => {
     setText('ul.header_mask li:nth-child(1) a', copy.navAbout)
     setText('ul.header_mask li:nth-child(2) a', copy.navJournal)
     setText('ul.header_mask li:nth-child(3) a', copy.navSupport)
-    setHref('ul.header_mask li:nth-child(2) a', '/mortgage-calculator')
+    setHref('ul.header_mask li:nth-child(2) a', '/mortgage-calculator/')
     setText('.main .main_left h3', copy.heroLabel)
     setText('.main .main_left h1', copy.heroTitle)
     setText('.main .main_left .mainleft_button a', copy.heroAction)
@@ -480,4 +480,3 @@ document.querySelectorAll('.lang-btn').forEach((button) => {
 })
 
 applyLanguage(localStorage.getItem('lang') || 'en')
-
