@@ -4,9 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COVILLA Travel</title>
+    <title>Jennis Chang home finance</title>
     <link rel="stylesheet" href="./index.min.css">
     <link rel="stylesheet" href="./responsive.css">
+    <style>
+        header .container .logo a.brand-logo {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+            backdrop-filter: blur(2px);
+            line-height: 1.2;
+        }
+
+        header .container .logo.scroll_down a.brand-logo {
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        header .container .logo a.brand-logo span {
+            color: #a5f3fc;
+            font-weight: 700;
+        }
+
+        header .container .logo.scroll_down a.brand-logo span {
+            color: #0f766e;
+        }
+
+        header .down_menu,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu {
+            width: min(860px, 94vw);
+        }
+
+        header .down_menu .location,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu .location {
+            width: calc((100% - 24px) / 3);
+            margin-right: 12px;
+        }
+
+        header .down_menu a.locations:nth-of-type(3n) .location,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu a.locations:nth-of-type(3n) .location {
+            margin-right: 0;
+        }
+
+        @media (max-width: 900px) {
+            header .down_menu .location,
+            .benefits .container .benefits_top .top_left .drop_down .down_menu .location {
+                width: calc((100% - 12px) / 2);
+            }
+
+            header .down_menu a.locations:nth-of-type(2n) .location,
+            .benefits .container .benefits_top .top_left .drop_down .down_menu a.locations:nth-of-type(2n) .location {
+                margin-right: 0;
+            }
+        }
+    </style>
 
 </head>
 
@@ -138,10 +190,10 @@
                 <div class="two_bar bottom"></div>
             </div>
             <div class="logo">
-                <a href="https://solely-webflow-path-three.netlify.app/">CO<span>VILLA</span></a>
+                <a href="/" class="brand-logo"><span>Je</span>nnis <span>Ch</span>ang <span>Ho</span>me <span>Fin</span>ance</a>
             </div>
             <!-- <ul>
-                <li><a href="https://solely-webflow-path-three.netlify.app/about">ABOUT</a></li>
+                <li><a href="/about/">ABOUT</a></li>
                 <li><a href="https://solely-webflow-path-three.netlify.app/journal">JOURNAL</a></li>
                 <li><a href="https://solely-webflow-path-three.netlify.app/support">SUPPORT</a></li>
             </ul> -->
@@ -150,20 +202,20 @@
                     <button type="button" class="lang-btn active" data-lang="en">EN</button>
                     <button type="button" class="lang-btn" data-lang="zh">中文</button>
                 </div>
-                <div class="button">DESTINATIONS<img src="./keyboard_arrow_down_FILL0_wght400_GRAD0_opsz24.svg"
+                <div class="button">LOAN PROGRAMS<img src="./keyboard_arrow_down_FILL0_wght400_GRAD0_opsz24.svg"
                         height="14" width="14"></div>
                 <div class="down_menu">
                     <div class="subtitle">
-                        <h3>CHOOSE A LOCATION</h3>
+                        <h3>CHOOSE A LOAN TYPE</h3>
                         <div class="line"></div>
                     </div>
 
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/france" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location france">
                             <div>
-                                <h4>France</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Conventional Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -171,11 +223,11 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/Indonesia" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location indonesia">
                             <div>
-                                <h4>Indonesia</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Non-QM Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -183,11 +235,11 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/greece" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location greece">
                             <div>
-                                <h4>Greece</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Commercial Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -195,11 +247,33 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/egypt" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location egypt">
                             <div>
-                                <h4>Egypt</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>DSCR</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>2nd Lien</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>HELOC</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -209,9 +283,9 @@
                 </div>
             </div>
             <ul class="header_mask">
-                <li><a href="https://solely-webflow-path-three.netlify.app/about">ABOUT</a></li>
-                <li><a href="https://solely-webflow-path-three.netlify.app/journal">JOURNAL</a></li>
-                <li><a href="https://solely-webflow-path-three.netlify.app/support">SUPPORT</a></li>
+                <li><a href="/about/">ABOUT</a></li>
+                <li><a href="/mortgage-calculator/">MORTGAGE CALCULATOR</a></li>
+                <li><a href="/contact/">CONTACT</a></li>
             </ul>
         </div>
     </header>
@@ -221,10 +295,10 @@
     <section class="main">
         <div class="container">
             <div class="main_left">
-                <h3>FAMILY TRAVEL AGENCY</h3>
-                <h1>Let's plan your next vacation</h1>
+                <h3>YOUR TRUSTED LOAN OFFICER</h3>
+                <h1>Find the right loan for your homeownership goals</h1>
                 <div class="mainleft_button">
-                    <a href="https://www.solely.world/">contact us</a>
+                    <a href="https://www.solely.world/">GET PRE-APPROVED</a>
                 </div>
             </div>
             <div class="main_right">
@@ -244,7 +318,7 @@
             </div>
         </div>
         <div class="location">
-            <h3>POPULAR LOCATION</h3>
+            <h3>POPULAR LOAN PROGRAMS</h3>
             <div></div>
         </div>
         <div class="slider_bottom">
@@ -271,8 +345,8 @@
     </section>
     <section class="wrapper">
         <div class="container">
-            <h3>COVILLA DESTINATIONS</h3>
-            <h1>Across the world</h1>
+            <h3>LOAN PROGRAMS</h3>
+            <h1>Solutions for every situation</h1>
             <div class="slide_photo">
                 <!-- <div class="carousel"> -->
                 <div class="slide_mask">
@@ -309,25 +383,25 @@
             <div class="benefits_top">
                 <div class="top_left">
                     <div class="benefit_left">
-                        <h3>COVILLA BENEFITS</h3>
-                        <h1>Take your family on the best vacation</h1>
+                        <h3>WHY CHOOSE JENNIS</h3>
+                        <h1>Helping you secure the best financing for your future</h1>
                         <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae
                             sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat.
                             Integer et facilisis elit, vitae.</p>
                     </div>
                     <div class="drop_down">
-                        <div class="down_button">CHOOSE A DESTINATION<img
+                        <div class="down_button">CHOOSE A LOAN TYPE<img
                                 src="./keyboard_arrow_down_FILL0_wght400_GRAD0_opsz24.svg" height="14" width="14"></div>
                         <div class="down_menu">
                             <div class="subtitle">
-                                <h3>DESTINATIONS</h3>
+                                <h3>LOAN PROGRAMS</h3>
                                 <div class="line"></div>
                             </div>
-                            <a href="https://solely-webflow-path-three.netlify.app/location/france" class="locations">
+                            <a href="/contact/" class="locations">
                                 <div class="location france">
                                     <div>
-                                        <h4>France</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Conventional Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -335,12 +409,12 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/Indonesia"
+                            <a href="/contact/"
                                 class="locations">
                                 <div class="location indonesia">
                                     <div>
-                                        <h4>Indonesia</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Non-QM Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -348,11 +422,11 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/greece" class="locations">
+                            <a href="/contact/" class="locations">
                                 <div class="location greece">
                                     <div>
-                                        <h4>Greece</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Commercial Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -360,18 +434,40 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/egypt" class="locations">
-                                <div class="location egypt">
+                    <a href="/contact/" class="locations">
+                        <div class="location egypt">
                                     <div>
-                                        <h4>Egypt</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>DSCR</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
                                     </div>
-                                </div>
-                            </a>
                         </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>2nd Lien</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>HELOC</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                </div>
                     </div>
                 </div>
                 <div class="top_right"></div>
@@ -702,7 +798,7 @@
                 <h4>COVILLA PROMISE</h4>
                 <h1>Get unparalleled peace of mind from start to finish of your trip</h1>
                 <div>
-                    <a href="javascript:void(0);">CONTACT US</a>
+                    <a href="/contact/">CONTACT US</a>
                     <a href="javascript:void(0);">HOW IT WORKS</a>
                 </div>
             </div>
@@ -720,7 +816,7 @@
                     <h2>Take the stress out of planning vacations</h2>
                     <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin
                         elit, ac tristique nisi.</p>
-                    <a href="https://solely-webflow-path-three.netlify.app/about">MEET YOUR TRAVEL AGENTS</a>
+                    <a href="/about/">MEET YOUR TRAVEL AGENTS</a>
                 </div>
             </div>
             <div class="right">
@@ -891,7 +987,7 @@
                 <h3>MEET YOUR TRAVEL AGENTS</h3>
 
                 <div class="line"></div>
-                <a href="https://solely-webflow-path-three.netlify.app/about">ABOUT US</a>
+                <a href="/about/">ABOUT US</a>
             </div>
             <div class="agents-photo">
                 <div>

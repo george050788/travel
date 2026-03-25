@@ -389,45 +389,75 @@ movingslide[5].addEventListener('mouseover', (event) => {
 const translations = {
     en: {
         htmlLang: 'en',
-        pageTitle: 'COVILLA Travel',
-        destinationBtn: 'DESTINATIONS',
-        chooseLocation: 'CHOOSE A LOCATION',
+        logoHtml: '<span>Je</span>nnis <span>Ch</span>ang <span>Ho</span>me <span>Fin</span>ance',
+        pageTitle: 'Jennis Chang home finance',
+        destinationBtn: 'LOAN PROGRAMS',
+        chooseLocation: 'CHOOSE A LOAN TYPE',
         navAbout: 'ABOUT',
-        navJournal: 'JOURNAL',
-        navSupport: 'SUPPORT',
-        heroLabel: 'FAMILY TRAVEL AGENCY',
-        heroTitle: "Let's plan your next vacation",
-        heroAction: 'contact us',
-        popularLocation: 'POPULAR LOCATION',
-        destinationsLabel: 'COVILLA DESTINATIONS',
-        destinationsTitle: 'Across the world',
-        benefitsLabel: 'COVILLA BENEFITS',
-        benefitsTitle: 'Take your family on the best vacation',
-        chooseDestination: 'CHOOSE A DESTINATION'
+        navJournal: 'MORTGAGE CALCULATOR',
+        navSupport: 'CONTACT',
+        loanTypes: ['Conventional Loan', 'Non-QM Loan', 'Commercial Loan', 'DSCR', '2nd Lien', 'HELOC'],
+        loanTypeTag: 'Loan Program',
+        heroLabel: 'YOUR TRUSTED LOAN OFFICER',
+        heroTitle: "Find the right loan for your homeownership goals",
+        heroAction: 'GET PRE-APPROVED',
+        popularLocation: 'POPULAR LOAN PROGRAMS',
+        destinationsLabel: 'LOAN PROGRAMS',
+        destinationsTitle: 'Solutions for every situation',
+        benefitsLabel: 'WHY CHOOSE JENNIS',
+        benefitsTitle: 'Helping you secure the best financing for your future',
+        chooseDestination: 'CHOOSE A LOAN TYPE'
     },
     zh: {
         htmlLang: 'zh-Hans',
-        pageTitle: 'COVILLA 旅行',
-        destinationBtn: '目的地',
-        chooseLocation: '选择地点',
-        navAbout: '关于我们',
-        navJournal: '旅行日志',
-        navSupport: '支持',
-        heroLabel: '家庭旅行社',
-        heroTitle: '一起规划你的下一次假期',
-        heroAction: '联系我们',
-        popularLocation: '热门地点',
-        destinationsLabel: 'COVILLA 目的地',
-        destinationsTitle: '环游世界',
-        benefitsLabel: 'COVILLA 优势',
-        benefitsTitle: '带家人开启最棒的假期',
-        chooseDestination: '选择目的地'
+        logoHtml: 'Jennis 珍珍貸款服務',
+        pageTitle: 'JENNIS 珍珍貸款服務',
+        destinationBtn: '貸款方案',
+        chooseLocation: '選擇類型',
+        navAbout: '關於我們',
+        navJournal: '貸款試算',
+        navSupport: '聯絡我們',
+        loanTypes: ['傳統貸款', '非QM貸款', '商業貸款', 'DSCR 貸款', '二順位貸款', '房屋淨值信用額度'],
+        loanTypeTag: '貸款方案',
+        heroLabel: '您值得信賴的貸款專家',
+        heroTitle: '為您的購房與投資目標找到最合適的貸款方案',
+        heroAction: '立即預先核准',
+        popularLocation: '熱門貸款方案',
+        destinationsLabel: '貸款方案',
+        destinationsTitle: '滿足各種需求的融資選擇',
+        benefitsLabel: '為什麼選擇 Jennis',
+        benefitsTitle: '協助您取得最適合的貸款與最佳條件',
+        chooseDestination: '選擇貸款類型'
     }
 }
 
 const setText = (selector, value) => {
     const node = document.querySelector(selector)
     if (node && value) node.textContent = value
+}
+
+const setHtml = (selector, value) => {
+    const node = document.querySelector(selector)
+    if (node && value) node.innerHTML = value
+}
+
+const setHref = (selector, value) => {
+    const node = document.querySelector(selector)
+    if (node && value) node.setAttribute('href', value)
+}
+
+const setHrefList = (selector, value) => {
+    document.querySelectorAll(selector).forEach((node) => {
+        node.setAttribute('href', value)
+    })
+}
+
+const setTextList = (selector, values) => {
+    if (!Array.isArray(values)) return
+    document.querySelectorAll(selector).forEach((node, index) => {
+        const value = values[index % values.length]
+        if (value) node.textContent = value
+    })
 }
 
 const setButtonWithIcon = (selector, value) => {
@@ -449,11 +479,20 @@ const applyLanguage = (lang) => {
     document.title = copy.pageTitle
     localStorage.setItem('lang', selected)
 
+    setHtml('header .logo a.brand-logo', copy.logoHtml)
     setButtonWithIcon('header .destination .button', copy.destinationBtn)
     setText('header .destination .down_menu .subtitle h3', copy.chooseLocation)
     setText('ul.header_mask li:nth-child(1) a', copy.navAbout)
     setText('ul.header_mask li:nth-child(2) a', copy.navJournal)
     setText('ul.header_mask li:nth-child(3) a', copy.navSupport)
+    setTextList('[data-loan-type]', copy.loanTypes)
+    document.querySelectorAll('[data-loan-tag]').forEach((node) => {
+        node.textContent = copy.loanTypeTag
+    })
+    setHrefList('header .down_menu a.locations, .benefits .down_menu a.locations', '/contact/')
+    setHref('ul.header_mask li:nth-child(1) a', '/about/')
+    setHref('ul.header_mask li:nth-child(2) a', '/mortgage-calculator/')
+    setHref('ul.header_mask li:nth-child(3) a', '/contact/')
     setText('.main .main_left h3', copy.heroLabel)
     setText('.main .main_left h1', copy.heroTitle)
     setText('.main .main_left .mainleft_button a', copy.heroAction)
@@ -474,5 +513,3 @@ document.querySelectorAll('.lang-btn').forEach((button) => {
 })
 
 applyLanguage(localStorage.getItem('lang') || 'en')
-
-
