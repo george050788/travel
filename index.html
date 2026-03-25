@@ -30,6 +30,34 @@
         header .container .logo.scroll_down a.brand-logo span {
             color: #0f766e;
         }
+
+        header .down_menu,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu {
+            width: min(860px, 94vw);
+        }
+
+        header .down_menu .location,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu .location {
+            width: calc((100% - 24px) / 3);
+            margin-right: 12px;
+        }
+
+        header .down_menu a.locations:nth-of-type(3n) .location,
+        .benefits .container .benefits_top .top_left .drop_down .down_menu a.locations:nth-of-type(3n) .location {
+            margin-right: 0;
+        }
+
+        @media (max-width: 900px) {
+            header .down_menu .location,
+            .benefits .container .benefits_top .top_left .drop_down .down_menu .location {
+                width: calc((100% - 12px) / 2);
+            }
+
+            header .down_menu a.locations:nth-of-type(2n) .location,
+            .benefits .container .benefits_top .top_left .drop_down .down_menu a.locations:nth-of-type(2n) .location {
+                margin-right: 0;
+            }
+        }
     </style>
 
 </head>
@@ -183,11 +211,11 @@
                     </div>
 
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/france" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location france">
                             <div>
-                                <h4>France</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Conventional Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -195,11 +223,11 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/Indonesia" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location indonesia">
                             <div>
-                                <h4>Indonesia</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Non-QM Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -207,11 +235,11 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/greece" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location greece">
                             <div>
-                                <h4>Greece</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>Commercial Loan</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -219,11 +247,33 @@
                         </div>
                     </a>
 
-                    <a href="https://solely-webflow-path-three.netlify.app/location/egypt" class="locations">
+                    <a href="/contact/" class="locations">
                         <div class="location egypt">
                             <div>
-                                <h4>Egypt</h4>
-                                <p>6 vacations</p>
+                                <h4 data-loan-type>DSCR</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>2nd Lien</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>HELOC</h4>
+                                <p data-loan-tag>Loan Program</p>
                             </div>
                             <div class="round_arrow"><img
                                     src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -347,11 +397,11 @@
                                 <h3>LOAN PROGRAMS</h3>
                                 <div class="line"></div>
                             </div>
-                            <a href="https://solely-webflow-path-three.netlify.app/location/france" class="locations">
+                            <a href="/contact/" class="locations">
                                 <div class="location france">
                                     <div>
-                                        <h4>France</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Conventional Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -359,12 +409,12 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/Indonesia"
+                            <a href="/contact/"
                                 class="locations">
                                 <div class="location indonesia">
                                     <div>
-                                        <h4>Indonesia</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Non-QM Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -372,11 +422,11 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/greece" class="locations">
+                            <a href="/contact/" class="locations">
                                 <div class="location greece">
                                     <div>
-                                        <h4>Greece</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>Commercial Loan</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
@@ -384,18 +434,40 @@
                                 </div>
                             </a>
 
-                            <a href="https://solely-webflow-path-three.netlify.app/location/egypt" class="locations">
-                                <div class="location egypt">
+                    <a href="/contact/" class="locations">
+                        <div class="location egypt">
                                     <div>
-                                        <h4>Egypt</h4>
-                                        <p>6 vacations</p>
+                                        <h4 data-loan-type>DSCR</h4>
+                                        <p data-loan-tag>Loan Program</p>
                                     </div>
                                     <div class="round_arrow"><img
                                             src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
                                     </div>
-                                </div>
-                            </a>
                         </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>2nd Lien</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/contact/" class="locations">
+                        <div class="location">
+                            <div>
+                                <h4 data-loan-type>HELOC</h4>
+                                <p data-loan-tag>Loan Program</p>
+                            </div>
+                            <div class="round_arrow"><img
+                                    src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607cb6f733628ed1e51f598b_arrowhead-right-icon-dark-light.svg">
+                            </div>
+                        </div>
+                    </a>
+                </div>
                     </div>
                 </div>
                 <div class="top_right"></div>

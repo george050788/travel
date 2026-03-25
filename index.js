@@ -396,6 +396,8 @@ const translations = {
         navAbout: 'ABOUT',
         navJournal: 'MORTGAGE CALCULATOR',
         navSupport: 'CONTACT',
+        loanTypes: ['Conventional Loan', 'Non-QM Loan', 'Commercial Loan', 'DSCR', '2nd Lien', 'HELOC'],
+        loanTypeTag: 'Loan Program',
         heroLabel: 'YOUR TRUSTED LOAN OFFICER',
         heroTitle: "Find the right loan for your homeownership goals",
         heroAction: 'GET PRE-APPROVED',
@@ -415,6 +417,8 @@ const translations = {
         navAbout: '關於我們',
         navJournal: '貸款試算',
         navSupport: '聯絡我們',
+        loanTypes: ['傳統貸款', '非QM貸款', '商業貸款', 'DSCR 貸款', '二順位貸款', '房屋淨值信用額度'],
+        loanTypeTag: '貸款方案',
         heroLabel: '您值得信賴的貸款專家',
         heroTitle: '為您的購房與投資目標找到最合適的貸款方案',
         heroAction: '立即預先核准',
@@ -442,6 +446,20 @@ const setHref = (selector, value) => {
     if (node && value) node.setAttribute('href', value)
 }
 
+const setHrefList = (selector, value) => {
+    document.querySelectorAll(selector).forEach((node) => {
+        node.setAttribute('href', value)
+    })
+}
+
+const setTextList = (selector, values) => {
+    if (!Array.isArray(values)) return
+    document.querySelectorAll(selector).forEach((node, index) => {
+        const value = values[index % values.length]
+        if (value) node.textContent = value
+    })
+}
+
 const setButtonWithIcon = (selector, value) => {
     const node = document.querySelector(selector)
     if (!node || !value) return
@@ -467,6 +485,11 @@ const applyLanguage = (lang) => {
     setText('ul.header_mask li:nth-child(1) a', copy.navAbout)
     setText('ul.header_mask li:nth-child(2) a', copy.navJournal)
     setText('ul.header_mask li:nth-child(3) a', copy.navSupport)
+    setTextList('[data-loan-type]', copy.loanTypes)
+    document.querySelectorAll('[data-loan-tag]').forEach((node) => {
+        node.textContent = copy.loanTypeTag
+    })
+    setHrefList('header .down_menu a.locations, .benefits .down_menu a.locations', '/contact/')
     setHref('ul.header_mask li:nth-child(1) a', '/about/')
     setHref('ul.header_mask li:nth-child(2) a', '/mortgage-calculator/')
     setHref('ul.header_mask li:nth-child(3) a', '/contact/')

@@ -31,6 +31,8 @@
         .label { font-size: .85rem; color: #475569; margin-bottom: 6px; }
         .value { font-weight: 600; word-break: break-word; }
         .value a { color: #1d4ed8; text-decoration: none; }
+        .qr-card { margin-top: 14px; max-width: 260px; }
+        .qr-card img { width: 100%; border-radius: 10px; background: #fff; padding: 8px; }
         .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
         a.btn { display: inline-block; text-decoration: none; padding: 10px 14px; border-radius: 10px; font-weight: 600; }
         .primary { background: #1d4ed8; color: #fff; }
@@ -91,6 +93,10 @@
                         <div class="value">Jennis珍珍愛碎碎念</div>
                     </div>
                 </div>
+                <div class="item qr-card">
+                    <div class="label">WeChat 加好友 QR Code</div>
+                    <img src="/contact/image.png" alt="WeChat QR code" data-wechat-qr />
+                </div>
             </article>
 
             <article class="lang-block" data-lang-content="en">
@@ -135,6 +141,10 @@
                         <div class="value">Jennis珍珍愛碎碎念</div>
                     </div>
                 </div>
+                <div class="item qr-card">
+                    <div class="label">WeChat QR Code</div>
+                    <img src="/contact/image.png" alt="WeChat QR code" data-wechat-qr />
+                </div>
             </article>
 
             <div class="cta">
@@ -167,6 +177,17 @@
         btns.forEach((btn) => {
             btn.addEventListener('click', () => applyLang(btn.dataset.lang))
         })
+
+        const loadWechatQr = (img) => {
+            const candidates = ['/contact/image.png', '/contact/image.jpg', '/contact/image.jpeg', '/contact/wechat-qr.png', '/contact/wechat-qr.jpg']
+            let idx = 0
+            img.addEventListener('error', () => {
+                idx += 1
+                if (idx < candidates.length) img.src = candidates[idx]
+            })
+        }
+
+        document.querySelectorAll('img[data-wechat-qr]').forEach(loadWechatQr)
 
         applyLang(localStorage.getItem('lang') || 'en')
     </script>
