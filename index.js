@@ -446,6 +446,12 @@ const setHref = (selector, value) => {
     if (node && value) node.setAttribute('href', value)
 }
 
+const setHrefList = (selector, value) => {
+    document.querySelectorAll(selector).forEach((node) => {
+        node.setAttribute('href', value)
+    })
+}
+
 const setTextList = (selector, values) => {
     if (!Array.isArray(values)) return
     document.querySelectorAll(selector).forEach((node, index) => {
@@ -483,6 +489,7 @@ const applyLanguage = (lang) => {
     document.querySelectorAll('[data-loan-tag]').forEach((node) => {
         node.textContent = copy.loanTypeTag
     })
+    setHrefList('header .down_menu a.locations, .benefits .down_menu a.locations', '/contact/')
     setHref('ul.header_mask li:nth-child(1) a', '/about/')
     setHref('ul.header_mask li:nth-child(2) a', '/mortgage-calculator/')
     setHref('ul.header_mask li:nth-child(3) a', '/contact/')
