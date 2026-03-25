@@ -58,8 +58,8 @@
             <article class="lang-block" data-lang-content="zh">
                 <div class="intro-grid">
                     <figure class="portrait-wrap">
-                        <img src="/about/jennis-portrait.png" alt="Jennis Chang portrait" data-portrait />
-                        <figcaption class="portrait-note">若圖片未顯示，請確認檔名為 <strong>jennis-portrait.png / .jpg / .jpeg</strong> 並放在 <strong>/about/</strong>。</figcaption>
+                        <img src="/about/image.png" alt="Jennis Chang portrait" data-portrait />
+                        <figcaption class="portrait-note">若圖片未顯示，請確認檔名為 <strong>image.png / image.jpg</strong>（或 jennis-portrait.*）並放在 <strong>/about/</strong>。</figcaption>
                     </figure>
                     <div>
                         <h1>不是每一筆貸款，都應該被核准。但每一個客戶，都值得被正確評估。</h1>
@@ -98,8 +98,8 @@
             <article class="lang-block" data-lang-content="en">
                 <div class="intro-grid">
                     <figure class="portrait-wrap">
-                        <img src="/about/jennis-portrait.png" alt="Jennis Chang portrait" data-portrait />
-                        <figcaption class="portrait-note">If the image does not appear, place it in <strong>/about/</strong> as <strong>jennis-portrait.png / .jpg / .jpeg</strong>.</figcaption>
+                        <img src="/about/image.png" alt="Jennis Chang portrait" data-portrait />
+                        <figcaption class="portrait-note">If the image does not appear, place it in <strong>/about/</strong> as <strong>image.png / image.jpg</strong> (or jennis-portrait.*).</figcaption>
                     </figure>
                     <div>
                         <h1>Not every loan should be approved. But every client deserves a proper evaluation.</h1>
@@ -167,7 +167,14 @@
         })
 
         const loadPortrait = (img) => {
-            const candidates = ['/about/jennis-portrait.png', '/about/jennis-portrait.jpg', '/about/jennis-portrait.jpeg']
+            const candidates = [
+                '/about/image.png',
+                '/about/image.jpg',
+                '/about/image.jpeg',
+                '/about/jennis-portrait.png',
+                '/about/jennis-portrait.jpg',
+                '/about/jennis-portrait.jpeg',
+            ]
             let idx = 0
             img.addEventListener('error', () => {
                 idx += 1
