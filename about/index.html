@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Jennis Chang Home Finance</title>
     <style>
-        body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; }
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #0f172a;
+            background-image: linear-gradient(rgba(15, 19, 38, 0.62), rgba(15, 19, 38, 0.62)),
+                url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
         .container { max-width: 980px; margin: 0 auto; padding: 32px 20px 56px; }
-        .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 8px 20px rgba(15,23,42,.05); }
+        .card { background: rgba(255, 255, 255, 0.95); border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 8px 20px rgba(15,23,42,.2); }
         h1 { margin: 0 0 8px; font-size: 2rem; }
         h2 { margin: 28px 0 10px; font-size: 1.3rem; }
         p { line-height: 1.7; margin: 10px 0; }
         ul { padding-left: 20px; line-height: 1.7; }
         .muted { color: #475569; }
+        .intro-grid { display: grid; grid-template-columns: minmax(220px, 320px) 1fr; gap: 18px; align-items: start; margin: 14px 0 18px; }
+        .portrait-wrap { border-radius: 14px; overflow: hidden; border: 1px solid #dbe5f0; background: #e2e8f0; }
+        .portrait-wrap img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3 / 4; }
+        .portrait-note { padding: 8px 10px; font-size: .82rem; color: #475569; background: #f1f5f9; }
         .lang-switch { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
         .lang-btns { display: flex; gap: 8px; }
         .lang-btn { border: 1px solid #cbd5e1; background: #fff; color: #334155; border-radius: 10px; padding: 8px 12px; font-weight: 600; cursor: pointer; }
@@ -24,6 +37,10 @@
         a.btn { display: inline-block; text-decoration: none; padding: 10px 14px; border-radius: 10px; font-weight: 600; }
         .primary { background: #1d4ed8; color: #fff; }
         .secondary { background: #e2e8f0; color: #1e293b; }
+        @media (max-width: 860px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .portrait-wrap { max-width: 380px; }
+        }
     </style>
 </head>
 
@@ -39,8 +56,16 @@
             </div>
 
             <article class="lang-block" data-lang-content="zh">
-                <h1>不是每一筆貸款，都應該被核准。但每一個客戶，都值得被正確評估。</h1>
-                <p class="muted">About me｜因為走過同樣的路，所以我更懂你在意什麼</p>
+                <div class="intro-grid">
+                    <figure class="portrait-wrap">
+                        <img src="/about/jennis-portrait.jpg" alt="Jennis Chang portrait" />
+                        <figcaption class="portrait-note">若圖片未顯示，請將你提供的照片存成 <strong>/about/jennis-portrait.jpg</strong>。</figcaption>
+                    </figure>
+                    <div>
+                        <h1>不是每一筆貸款，都應該被核准。但每一個客戶，都值得被正確評估。</h1>
+                        <p class="muted">About me｜因為走過同樣的路，所以我更懂你在意什麼</p>
+                    </div>
+                </div>
 
                 <p>18年我從台灣移民到美國，我不只適應文化與語言，入行貸款行業多年，仔細研究過美國金融制度的規則與細節。</p>
                 <p>在不同體系之間轉換的過程中，我深刻體會到，對多數新移民而言，真正困難的從來不是申請貸款本身，而是如何在資訊不對稱與制度差異下，做出正確決策。</p>
@@ -71,8 +96,16 @@
             </article>
 
             <article class="lang-block" data-lang-content="en">
-                <h1>Not every loan should be approved. But every client deserves a proper evaluation.</h1>
-                <p class="muted">About me｜Because I have walked this path myself, I understand what truly matters to you.</p>
+                <div class="intro-grid">
+                    <figure class="portrait-wrap">
+                        <img src="/about/jennis-portrait.jpg" alt="Jennis Chang portrait" />
+                        <figcaption class="portrait-note">If the image does not appear, save your photo as <strong>/about/jennis-portrait.jpg</strong>.</figcaption>
+                    </figure>
+                    <div>
+                        <h1>Not every loan should be approved. But every client deserves a proper evaluation.</h1>
+                        <p class="muted">About me｜Because I have walked this path myself, I understand what truly matters to you.</p>
+                    </div>
+                </div>
 
                 <p>I immigrated from Taiwan to the U.S. in 2018. Beyond adapting to culture and language, I spent years in mortgage lending studying the rules and details of the U.S. financial system.</p>
                 <p>Through navigating different systems, I learned that for many new immigrants, the hardest part is not the mortgage application itself—it is making the right decision when information is uneven and systems are unfamiliar.</p>
