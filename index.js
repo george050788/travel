@@ -262,103 +262,103 @@ slideprev.addEventListener('click', (event) => {
     // }
 })
 
-let list = document.querySelectorAll('.list')
-let line = document.querySelectorAll('.popular .line')
-let dot = document.querySelectorAll('.dot')
-let outline = document.querySelectorAll('.outline-circle')
-let circle1 = document.querySelector('.circle.egypt')
-let circle2 = document.querySelector('.circle.greece')
-let circle3 = document.querySelector('.circle.indonesia')
-let circle4 = document.querySelector('.circle.france')
-let index2 = 0
-circle1.addEventListener('click', (event) => {
+// let list = document.querySelectorAll('.list')
+// // let line = document.querySelectorAll('.popular .line')
+// let dot = document.querySelectorAll('.dot')
+// let outline = document.querySelectorAll('.outline-circle')
+// let circle1 = document.querySelector('.circle.egypt')
+// let circle2 = document.querySelector('.circle.greece')
+// let circle3 = document.querySelector('.circle.indonesia')
+// let circle4 = document.querySelector('.circle.france')
+// let index2 = 0
+// circle1.addEventListener('click', (event) => {
 
-    index2 = 0
-    for (let j = 1; j < line.length; j++) {
-        if ([...line[j].classList].includes('active')) {
-            line[j].classList.remove('active')
-            dot[j].classList.remove('active')
-            outline[j].classList.remove('active')
-            outline[index2].classList.add('active')
-            list[j].classList.remove('active')
-            list[index2].classList.add('active')
-        }
+//     index2 = 0
+//     for (let j = 1; j < line.length; j++) {
+//         if ([...line[j].classList].includes('active')) {
+//             line[j].classList.remove('active')
+//             dot[j].classList.remove('active')
+//             outline[j].classList.remove('active')
+//             outline[index2].classList.add('active')
+//             list[j].classList.remove('active')
+//             list[index2].classList.add('active')
+//         }
 
-    }
-    console.log('circle1-click')
-})
-circle2.addEventListener('click', (event) => {
-    index2 = 1
-    if ([...outline[0].classList].includes('active')) {
-        outline[0].classList.remove('active')
-        list[0].classList.remove('active')
-    }
-    for (let i = 2; i < line.length; i++) {
-        if ([...line[i].classList].includes('active')) {
-            line[i].classList.remove('active')
-            dot[i].classList.remove('active')
-        }
-        if ([...outline[i].classList].includes('active')) {
-            outline[i].classList.remove('active')
-            list[i].classList.remove('active')
-        }
-    }
-    if (![...outline[index2].classList].includes('active')) {
-        line[index2].classList.add('active')
-        dot[index2].classList.add('active')
-        outline[index2].classList.add('active')
-        list[index2].classList.add('active')
-    }
-
-
-    console.log('circle2-click')
-})
-circle3.addEventListener('click', (event) => {
-    index2 = 2
-    for (let i = 0; i < line.length - 2; i++) {
-        if ([...outline[i].classList].includes('active')) {
-            outline[i].classList.remove('active')
-            list[i].classList.remove('active')
-        }
-    }
-    if ([...outline[index2 + 1].classList].includes('active')) {
-        line[index2 + 1].classList.remove('active')
-        dot[index2 + 1].classList.remove('active')
-        outline[index2 + 1].classList.remove('active')
-        list[index2 + 1].classList.remove('active')
-    }
-    if (![...outline[index2].classList].includes('active')) {
-        line[index2].classList.add('active')
-        dot[index2].classList.add('active')
-        outline[index2].classList.add('active')
-        list[index2].classList.add('active')
-    }
-
-    console.log('circle3-click')
-})
-circle4.addEventListener('click', (event) => {
-
-    for (let i = 0; i < line.length - 1; i++) {
-        if (![...line[i].classList].includes('active')) {
-            line[i].classList.add('active')
-            dot[i].classList.add('active')
-        }
-        if ([...outline[i].classList].includes('active')) {
-            outline[i].classList.remove('active')
-            list[i].classList.remove('active')
-        }
-    }
-    index2 = 3
-    if (![...line[index2].classList].includes('active')) {
-        line[index2].classList.add('active')
-        dot[index2].classList.add('active')
-        outline[index2].classList.add('active')
-        list[index2].classList.add('active')
-    }
+//     }
+//     console.log('circle1-click')
+// })
+// circle2.addEventListener('click', (event) => {
+//     index2 = 1
+//     if ([...outline[0].classList].includes('active')) {
+//         outline[0].classList.remove('active')
+//         list[0].classList.remove('active')
+//     }
+//     for (let i = 2; i < line.length; i++) {
+//         if ([...line[i].classList].includes('active')) {
+//             line[i].classList.remove('active')
+//             dot[i].classList.remove('active')
+//         }
+//         if ([...outline[i].classList].includes('active')) {
+//             outline[i].classList.remove('active')
+//             list[i].classList.remove('active')
+//         }
+//     }
+//     if (![...outline[index2].classList].includes('active')) {
+//         line[index2].classList.add('active')
+//         dot[index2].classList.add('active')
+//         outline[index2].classList.add('active')
+//         list[index2].classList.add('active')
+//     }
 
 
-    console.log('circle4-click')
-})
+//     console.log('circle2-click')
+// })
+// circle3.addEventListener('click', (event) => {
+//     index2 = 2
+//     for (let i = 0; i < line.length - 2; i++) {
+//         if ([...outline[i].classList].includes('active')) {
+//             outline[i].classList.remove('active')
+//             list[i].classList.remove('active')
+//         }
+//     }
+//     if ([...outline[index2 + 1].classList].includes('active')) {
+//         line[index2 + 1].classList.remove('active')
+//         dot[index2 + 1].classList.remove('active')
+//         outline[index2 + 1].classList.remove('active')
+//         list[index2 + 1].classList.remove('active')
+//     }
+//     if (![...outline[index2].classList].includes('active')) {
+//         line[index2].classList.add('active')
+//         dot[index2].classList.add('active')
+//         outline[index2].classList.add('active')
+//         list[index2].classList.add('active')
+//     }
+
+//     console.log('circle3-click')
+// })
+// circle4.addEventListener('click', (event) => {
+
+//     for (let i = 0; i < line.length - 1; i++) {
+//         if (![...line[i].classList].includes('active')) {
+//             line[i].classList.add('active')
+//             dot[i].classList.add('active')
+//         }
+//         if ([...outline[i].classList].includes('active')) {
+//             outline[i].classList.remove('active')
+//             list[i].classList.remove('active')
+//         }
+//     }
+//     index2 = 3
+//     if (![...line[index2].classList].includes('active')) {
+//         line[index2].classList.add('active')
+//         dot[index2].classList.add('active')
+//         outline[index2].classList.add('active')
+//         list[index2].classList.add('active')
+//     }
+
+
+//     console.log('circle4-click')
+// })
 
 let movingslide = document.querySelectorAll('.moving-slider ul li')
 let move = document.querySelector('.moving-slider ul')
